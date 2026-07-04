@@ -1,0 +1,201 @@
+.table-scene {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--base-100);
+}
+
+.table-scene__zoom {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.table-scene__surface {
+  position: absolute;
+  inset: 0;
+  background-image: url("/table-scene/wood-table.png");
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+}
+
+.table-scene__items {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+}
+
+.table-scene__item {
+  position: absolute;
+  will-change: transform;
+}
+
+.table-scene__item img {
+  height: auto;
+  width: 100%;
+  border-radius: 3px;
+  box-shadow: 0 18px 40px -12px rgba(0, 0, 0, 0.55);
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.table-scene__vignette {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  box-shadow: inset 0 0 180px rgba(0, 0, 0, 0.5);
+}
+
+.table-scene__search {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 32%;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  padding: 0 2rem;
+  will-change: transform;
+}
+
+.table-scene__search-box {
+  display: flex;
+  width: 100%;
+  max-width: 36rem;
+  align-items: center;
+  gap: 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(227, 227, 219, 0.2);
+  background-color: rgba(26, 22, 20, 0.55);
+  padding: 1rem 1.25rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.table-scene__search-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  color: var(--base-300);
+}
+
+.table-scene__search-text {
+  display: flex;
+  min-height: 1.75rem;
+  width: 100%;
+  align-items: center;
+  font-family: "PP Neue Montreal";
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--base-100);
+}
+
+.table-scene__caret {
+  margin-left: 0.125rem;
+  display: inline-block;
+  height: 1.5rem;
+  width: 1px;
+  background-color: var(--base-500);
+  animation: table-scene-caret-pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes table-scene-caret-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.table-scene__kbd {
+  display: none;
+  border-radius: 0.375rem;
+  border: 1px solid rgba(227, 227, 219, 0.25);
+  padding: 0.25rem 0.5rem;
+  font-family: "Geist Mono";
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  color: var(--base-300);
+}
+
+.table-scene__nav {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2rem;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+}
+
+.table-scene__nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(227, 227, 219, 0.15);
+  background-color: rgba(26, 22, 20, 0.55);
+  padding: 0.375rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.table-scene__pill {
+  border-radius: 0.75rem;
+  padding: 0.625rem 1.25rem;
+  font-family: "Geist Mono";
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: var(--base-300);
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.table-scene__pill:hover {
+  color: var(--base-100);
+}
+
+.table-scene__pill--active {
+  background-color: var(--base-500);
+  color: var(--base-400);
+  font-weight: 600;
+}
+
+@media (min-width: 640px) {
+  .table-scene__kbd {
+    display: block;
+  }
+}
+
+@media (max-width: 1000px) {
+  .table-scene__search {
+    padding: 0 1.25rem;
+  }
+
+  .table-scene__search-text {
+    font-size: 1rem;
+  }
+
+  .table-scene__pill {
+    padding: 0.5rem 0.875rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.05rem;
+  }
+}

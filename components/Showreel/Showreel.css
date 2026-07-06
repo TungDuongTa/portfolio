@@ -35,13 +35,13 @@
   position: absolute;
   inset: 0;
   z-index: 5;
-  background-color: rgba(23, 20, 18, 0.6);
+  background-color: rgba(23, 20, 18, 0.35);
   opacity: 0;
 }
 
 .showreel-items {
   position: absolute;
-  inset: 0;
+  inset: -6%;
   z-index: 10;
 }
 
@@ -54,7 +54,7 @@
   height: auto;
   width: 100%;
   border-radius: 3px;
-  box-shadow: 0 18px 40px -12px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 14px 32px -10px rgba(0, 0, 0, 0.5);
   user-select: none;
   -webkit-user-drag: none;
 }
@@ -84,8 +84,14 @@
   z-index: 30;
   display: flex;
   justify-content: center;
-  padding: 0 2rem;
+  padding: 0 1rem;
   will-change: transform;
+}
+
+@media (min-width: 640px) {
+  .showreel-search {
+    padding: 0 2rem;
+  }
 }
 
 .showreel-search-box {
@@ -95,12 +101,18 @@
   align-items: center;
   gap: 0.75rem;
   border-radius: 0.75rem;
-  border: 1px solid rgba(227, 227, 219, 0.2);
-  background-color: rgba(26, 22, 20, 0.55);
-  padding: 1rem 1.25rem;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(227, 227, 219, 0.35);
+  background-color: rgba(22, 18, 16, 0.88);
+  padding: 0.75rem 1rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+@media (min-width: 640px) {
+  .showreel-search-box {
+    padding: 1rem 1.25rem;
+  }
 }
 
 .showreel-search-icon {
@@ -116,10 +128,16 @@
   width: 100%;
   align-items: center;
   font-family: "PP Neue Montreal";
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.2;
   color: var(--base-100);
+}
+
+@media (min-width: 640px) {
+  .showreel-search-text {
+    font-size: 1.25rem;
+  }
 }
 
 .showreel-caret {
@@ -158,58 +176,4 @@
   .showreel-kbd {
     display: block;
   }
-}
-
-@media (max-width: 1000px) {
-  .showreel-search,
-  .showreel-items,
-  .showreel-backdrop,
-  .showreel-vignette,
-  .showreel-finale,
-  .showreel-dark-bg {
-    display: none;
-  }
-}
-
-.showreel-finale {
-  position: absolute;
-  inset: 0;
-  z-index: 40;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  pointer-events: none;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.showreel-finale-heading {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.15rem;
-  text-align: center;
-  color: var(--base-100);
-  font-size: clamp(2.5rem, 7vw, 5.5rem);
-  line-height: 0.95;
-  will-change: transform, opacity;
-}
-
-.showreel-finale-prompt {
-  display: block;
-  text-transform: uppercase;
-  will-change: transform, opacity;
-}
-
-.showreel-finale-yes {
-  display: inline-block;
-}
-
-.showreel-finale-line {
-  position: relative;
-  transform: translateY(100%);
-  will-change: transform;
-  padding-bottom: 0.2em;
-  margin-bottom: -0.2em;
 }

@@ -4,7 +4,6 @@ import Button from "@/components/Button/Button";
 import Copy from "@/components/Copy/Copy";
 import Preloader, { isInitialLoad } from "@/components/Preloader/Preloader";
 import { useEffect } from "react";
-import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Footer from "@/components/Footer/Footer";
 import Showreel from "@/components/Showreel/Showreel";
